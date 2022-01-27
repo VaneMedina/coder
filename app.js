@@ -1,18 +1,36 @@
 const fs = require('fs');
 
-//Leer
-fs.readFile('./archivosTexto.txt', 'utf-8', (error, data)=>{
-    if(error){
-        console.log(error)
-    }else{
-        console.log(data)
+class Contenedor{
+    constructor(nameFile){
+        this.nameFile = nameFile;
     }
-})
-//Escribir
-fs.writeFile('./archivosTexto.txt', 'ESCRIBO CON OPERACIONES NO BLOQUEANTES', error => {
-    if(error){
-        console.log(error)
-    }else{
-        console.log('Se escribió correctamente')
+    async save(product) {
+        try {
+            await fs.promises.writeFile(this.nameFile, JSON.stringify(product, null, 2));
+            this.read();
+        } catch (error) {
+            console.log(error)
+        }
     }
-})
+    async read() {
+        try {
+            const content = await fs.promises.readFile(this.nameFile);
+            const obj = JSON.parse(content);
+            console.log(obj.id);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+const objeto1 = new Contenedor('./products.txt');
+
+const product = {
+    title: 'Almohadones Tusor',
+    price: 120,
+    thumbnail: '',
+    id: 1  
+}
+
+objeto1.save(product);
+
