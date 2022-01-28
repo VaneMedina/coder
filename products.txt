@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Almohadones Tusor",
+    "price": 120,
+    "thumbnail": "",
+    "id": 1
+  },
+  {
+    "title": "Almohadones Tusor",
+    "price": 120,
+    "thumbnail": "",
+    "id": 1
+  },
+  {
+    "title": "Almohadones Tusor",
+    "price": 120,
+    "thumbnail": "",
+    "id": 1
+  }
+]
