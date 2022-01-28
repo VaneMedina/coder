@@ -20,7 +20,41 @@ class Contenedor{
     }
 
     async getById(id){
-    
+        try {
+            const dataFile = await fs.readFile(this.nameFile);
+            const products = JSON.parse(dataFile);
+            const product = products.find(product => product.id === id);
+            if(product){
+                return product;
+            }else{
+                return null;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    async getAll(){
+        const dataFile = await fs.readFile(this.nameFile);
+        const products = JSON.parse(dataFile);
+        return products;
+    }
+    async deleteById(id){
+        try {
+            const dataFile = await fs.readFile(this.nameFile);
+            const products = JSON.parse(dataFile);
+            //Devuelve un array con todos los elementos que tenga menos el que coincida con el id que le envío.
+            const filteredProducts = products.filter(product => product.id !== id);
+            await fs.writeFile(this.nameFile, JSON.stringify(filteredProducts, null, 2), 'utf-8');
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    async deleteAll(){
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

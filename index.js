@@ -8,4 +8,7 @@ const product1 = {
     thumbnail: ''
 }
 
-instancia.save(product1);
+//instancia.save(product1);
+//instancia.getById(1).then(product => console.log(product));
+//instancia.getAll().then(products => console.log(products));
+//instancia.deleteById(1);
