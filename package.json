@@ -1,0 +1,20 @@
+{
+  "name": "coder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VaneMedina/coder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaneMedina/coder/issues"
+  },
+  "homepage": "https://github.com/VaneMedina/coder#readme"
+}
