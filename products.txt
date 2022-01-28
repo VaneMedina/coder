@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Almohadones Tusor",
+    "price": 120,
+    "thumbnail": "",
+    "id": 1
+  }
+]
